@@ -47,7 +47,7 @@ Run the following command:
 
 * **WARNING**:  Do _not_ close the command line just yet or it will be difficult to stop your web server later in this exercise.
 
-Unless you happen to have already manually set an environment variable named "`PORT`" on your local computer to some number, the output you will see will say something like:
+The output you will see will say something like:
 
 ```
 info: Microsoft.Hosting.Lifetime[14]
