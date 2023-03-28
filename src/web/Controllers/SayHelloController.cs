@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace HandwrittenDatabase.Controllers;
+namespace Handwritten.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
