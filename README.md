@@ -19,16 +19,17 @@ Ensure that its prompt indicates that your commands will be running within the c
 Run the following command:
 
 ```sh
-dotnet publish --configuration Release
+(cd ./src/web && dotnet publish --configuration Release --output ../../my_output && cd ../..)
 ```
 
-The `dotnet publish --configuration Release` command will take about a minute or two to execute.
+The above command should execute within a second or two.
 
-It will add a new subfolder called `/bin/` as well as one called `/obj/` into the folder on your computer containing a copy of this codebase.
+* It will add a new subfolder called `/bin/` as well as one called `/obj/` into `/src/web/` within the folder on your computer containing a copy of this codebase, but you can ignore those.
+* More importantly, it will add a new subfolder called `/my_output/` into the top level of the folder on your computer containing a copy of this codebase.
 
 Congratulations -- you have now built an executable "runtime" for ASP.NET that, when executed, will behave as a web server.
 
-The entirety of your "runtime" that you just built lives in the `/bin/Release/net7.0/publish/` folder _(if you were using a different version of .NET, it might not say `7.0`)_.   It should contain about 6 files, including one called `Handwritten.exe`.
+The entirety of your "runtime" that you just built lives in the `/my_output/` folder.  It should contain about 6 files, including one called `Handwritten.exe`.
 
 ---
 
@@ -41,7 +42,7 @@ Ensure that its prompt indicates that your commands will be running within the c
 Run the following command:
 
 ```sh
-./bin/Release/net7.0/publish/Handwritten.exe
+./my_output/Handwritten.exe
 ```
 
 * **WARNING**:  Do _not_ close the command line just yet or it will be difficult to stop your web server later in this exercise.
@@ -71,7 +72,7 @@ Take a look in the upper-left corner of the webpage you just visited:  it should
 
 ## Stopping your web server
 
-Go back to the command line interface from which you ran `./bin/Release/net7.0/publish/Handwritten.exe`.
+Go back to the command line interface from which you ran `./my_output/Handwritten.exe`.
 
 Hold <kbd>Ctrl</kbd> and hit <kbd>c</kbd>, then release them both.
 
@@ -101,6 +102,7 @@ steps:
   displayName: "DotNet Publish"
   inputs:
     command: publish
+    workingDirectory: "src/web"
     arguments: "--configuration Release --output $(Build.ArtifactStagingDirectory)"
     zipAfterPublish: True
 
