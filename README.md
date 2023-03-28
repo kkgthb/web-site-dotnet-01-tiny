@@ -66,7 +66,7 @@ info: Microsoft.Hosting.Lifetime[0]
 
 Open a web browser and navigate to [http://localhost:5000/api/sayhello](http://localhost:5000/api/sayhello) _(being sure to use an alternative port number to `5000` if indicated "`now listening on`" message you saw when you executed your runtime)_.
 
-Take a look in the upper-left corner of the webpage you just visited:  it should say "**Hello World!**"
+Take a look in the upper-left corner of the webpage you just visited:  it should say "**Hello World**".
 
 ---
 
