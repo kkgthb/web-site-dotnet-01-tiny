@@ -113,4 +113,4 @@ steps:
     ArtifactName: "MyBuiltDotNetWebsite"
 ```
 
-The output of running such a pipeline against this repository should be a folder structure whose contents look like the `/bin/Release/net7.0/publish/` folder you saw on your desktop computer earlier _(it should contain about 6 files including one called `Handwritten.exe`)_.
+The "published artifact" output of running such a pipeline against this repository should be a folder called `MyBuiltDotNetWebsite` with one `.zip`-typed file in it.  If you were to download the `.zip` file to your computer _(click its name in the published artifact file-tree browser)_ and open it, its contents would look like those of the `/my_output/` folder you saw on your desktop computer earlier _(approximately 6 files, including one called `Handwritten.exe`)_.
